@@ -156,6 +156,9 @@ exports.convert = function(options) {
 		}
 
 		args.push(options.dst)
+		
+		//Auto-rotate portrait images based on exif
+		args.push('-auto-orient');
 
 		child = exec('convert', args, function(err, stdout, stderr) {
 
